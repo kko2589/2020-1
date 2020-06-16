@@ -21,11 +21,12 @@ int main() {
 
 int find_gcd(int x,int y){
 	int gcd;
-	while (y!=0)
+	while (y!=x)
 	{
-		gcd=y;
-		y=x%y;
-		x=gcd;
+		if(x>y)
+			x=x-y;
+		else
+			y=y-x;
 	}
-	return gcd;
+	return x;
 }
